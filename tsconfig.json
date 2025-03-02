@@ -1,10 +1,20 @@
 {
-  "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "noEmit": true,
-    "allowImportingTsExtensions": true
-  }
+   "compilerOptions": {
+      "lib": [
+         "es6"
+      ],
+      "target": "es6",
+      "module": "NodeNext",
+      "moduleResolution": "nodenext",
+      "outDir": "dist",
+      "resolveJsonModule": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "noEmit": true,
+      "allowImportingTsExtensions": true
+   },
+   "include": ["**/*.ts"],
+   "exclude": ["node_modules", "**/*.spec.ts"]
 }
