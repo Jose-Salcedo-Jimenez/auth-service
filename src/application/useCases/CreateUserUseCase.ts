@@ -25,4 +25,9 @@ export class CreareUserCase {
 
     return newUser;
   }
+
+  async delete(id: number): Promise<boolean>{
+    const deleteUser = await this.userRepository.delete(id);
+    return deleteUser
+  }
 }

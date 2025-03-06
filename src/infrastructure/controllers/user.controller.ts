@@ -23,6 +23,17 @@ export class UserController {
     }
   }
 
+  async deleteUser(req: Request, res: Response): Promise<Response>{
+    const {id} = req.body;
+    console.log(id)
+    try{
+      const userDelete = await this.createUserCase.delete(id);
+      return res.status(201).json({message: "Usuario Eliminado con Exito", user: userDelete})
+    }catch(error){
+      res.status(400).json({error: error.message})
+    }
+  }
+
   async getProfile(req: Request, res: Response) {
     return res.json({ message: "Perfil de usuario", user: req.user });
   }

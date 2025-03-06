@@ -11,3 +11,4 @@ router.get(
   authMiddleware,
   userController.getProfile.bind(userController)
 );
+router.delete("/profile", authMiddleware, userController.deleteUser.bind(userController))

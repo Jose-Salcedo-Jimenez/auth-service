@@ -22,7 +22,10 @@ export class UserRepsoitory implements IUserrepository {
   }
 
   async delete(id: number): Promise<boolean> {
-    await prisma.user.delete({ where: { id } });
+
+    await prisma.user.delete({
+      where: { id } 
+    });
     return true;
   }
 }
