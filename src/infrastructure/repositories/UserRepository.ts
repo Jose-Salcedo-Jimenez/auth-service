@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 export class UserRepsoitory implements IUserrepository {
   //Metodos
   async create(user: User): Promise<User> {
+    console.log(user)
     return await prisma.user.create({ data: user });
   }
   async findById(id: number): Promise<User | null> {

@@ -11,13 +11,9 @@ export class UserController {
   }
 
   async createUser(req: Request, res: Response): Promise<Response> {
+    const userData = req.body;
     try {
-      const { name, email, password } = req.body;
-      const newUser = await this.createUserCase.execute({
-        name,
-        email,
-        password,
-      });
+      const newUser = await this.createUserCase.execute(userData);
 
       return res
         .status(201)
@@ -25,5 +21,9 @@ export class UserController {
     } catch (error: any) {
       return res.status(400).json({ error: error.message });
     }
+  }
+
+  async getProfile(req: Request, res: Response) {
+    return res.json({ message: "Perfil de usuario", user: req.user });
   }
 }
