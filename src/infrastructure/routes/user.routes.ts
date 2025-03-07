@@ -19,5 +19,6 @@ router.delete(
 );
 
 router.post("/profile/createAccount", authMiddleware, createAccount);
+router.post("/profile/ById", authMiddleware, userController.findById.bind(userController))
 
 

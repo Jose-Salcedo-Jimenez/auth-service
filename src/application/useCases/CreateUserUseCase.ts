@@ -30,4 +30,9 @@ export class CreareUserCase {
     const deleteUser = await this.userRepository.delete(id);
     return deleteUser
   }
+
+  async findById(id: number): Promise<User>{
+    const deleteUser = await this.userRepository.findById(id);
+    return deleteUser
+  }
 }
