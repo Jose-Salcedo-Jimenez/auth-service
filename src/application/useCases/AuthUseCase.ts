@@ -16,6 +16,7 @@ export class AuthUseCase {
   generateToken(user: User):string{
     const payload: ITokenPayload = {
         id: user.id,
+        name: user.name,
         email: user.email
     };
 

@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { UserController } from "../controllers/user.controller.ts";
 import { authMiddleware } from "../middleware/authMiddleware.ts";
+import { createAccount } from "../api/CreateAccount.ts";
 export const router = Router();
 const userController = new UserController();
 
@@ -11,4 +12,12 @@ router.get(
   authMiddleware,
   userController.getProfile.bind(userController)
 );
-router.delete("/profile", authMiddleware, userController.deleteUser.bind(userController))
+router.delete(
+  "/profile",
+  authMiddleware,
+  userController.deleteUser.bind(userController)
+);
+
+router.post("/profile/createAccount", authMiddleware, createAccount);
+
+
