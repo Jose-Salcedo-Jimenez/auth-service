@@ -16,6 +16,8 @@ export class UserController {
     try {
       const newUser = await this.createUserCase.execute(userData);
       await sendEmail(userData.email);
+
+      delete newUser.password
       return res
         .status(201)
         .json({ message: "usuario creado con exito", user: newUser });

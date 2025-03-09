@@ -11,13 +11,16 @@ export const logMiddleware = async (
   try {
     const payload = {
       service: "Users-Auth",
-      type: req.method,
+      type: req.method.toLowerCase() as string,
+      payload: { message: "Successful" },
     };
+
     await axios.post(LOG_SERVICE_URL, JSON.stringify(payload), {
       headers: { "Content-Type": "application/json" },
     });
-  } catch (error) {
-    console.error(error);
+
+} catch (error) {
+    console.error("Error desconocido:", error);
   }
 
   next();

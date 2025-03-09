@@ -26,5 +26,6 @@ export const createAccount = async (req: Request, res:Response)=>{
     
       } catch (error) {
         res.status(500).json({ error: error.response?.data || "Error en la petición" });
+        console.log('error +> create', error)
       }
 }

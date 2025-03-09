@@ -5,9 +5,9 @@ export const sendEmail = async (email: string) => {
     const SEND_EMAIL = process.env.SEND_EMAIL;
     const payload = {
       to: email,
-      type: "Welcome",
+      type: "welcome",
     };
-    await axios.post(SEND_EMAIL, JSON.stringify(payload));
+    await axios.post(SEND_EMAIL, payload);
     console.log("Email enviado al Microservicio");
   } catch (error) {
     console.error(`Error al enviar el email ${error}`);
