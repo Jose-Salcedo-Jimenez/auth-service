@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
-import { User } from "../../domain/entities/user.ts";
-import { IUserrepository } from "../../domain/repositories/IUserRepository.ts";
-import { validateUser } from "../../infrastructure/validators/userValidator.ts";
+import { User } from "../../../domain/entities/user.ts";
+import { IUserrepository } from "../../../domain/repositories/IUserRepository.ts";
+import { validateUser } from "../../../infrastructure/validators/user/userValidator.ts";
 export class CreareUserCase {
   private userRepository: IUserrepository;
   constructor(userRepository: IUserrepository) {
@@ -26,13 +26,4 @@ export class CreareUserCase {
     return newUser;
   }
 
-  async delete(id: number): Promise<boolean>{
-    const deleteUser = await this.userRepository.delete(id);
-    return deleteUser
-  }
-
-  async findById(id: number): Promise<User>{
-    const deleteUser = await this.userRepository.findById(id);
-    return deleteUser
-  }
 }
