@@ -1,4 +1,4 @@
-import { IUserrepository } from "../../domain/repositories/IUserRepository.ts";
+import { IUserrepository } from "../../domain/repository/IUserRepository.ts";
 import { User } from "../../domain/entities/user.ts";
 import { PrismaClient } from "@prisma/client";
 

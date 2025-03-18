@@ -1,5 +1,5 @@
 import { User } from "@prisma/client";
-import { IUserrepository } from "../../../domain/repositories/IUserRepository.ts";
+import { IUserrepository } from "../../domain/repository/IUserRepository.ts";
 
 export class updateUser{
     private userRepository: IUserrepository;

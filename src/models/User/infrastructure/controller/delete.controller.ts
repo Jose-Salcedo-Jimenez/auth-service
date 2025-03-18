@@ -1,5 +1,5 @@
-import { deleteUser } from "../../../application/useCases/user/UseCaseDeleteUser.ts";
-import { UserRepsoitory } from "../../repositories/UserRepository.ts";
+import { deleteUser } from "../../application/useCase/UseCaseDeleteUser.ts";
+import { UserRepsoitory } from "../repository/UserRepository.ts";
 import { Request, Response } from "express";
 export class DeleteController {
   private deleteUser: deleteUser;

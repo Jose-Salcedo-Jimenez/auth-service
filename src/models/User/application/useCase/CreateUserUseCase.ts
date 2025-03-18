@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
-import { User } from "../../../domain/entities/user.ts";
-import { IUserrepository } from "../../../domain/repositories/IUserRepository.ts";
-import { validateUser } from "../../../infrastructure/validators/user/userValidator.ts";
+import { User } from "../../domain/entities/user.ts";
+import { IUserrepository } from "../../domain/repository/IUserRepository.ts";
+import { validateUser } from "../../infrastructure/validators/userValidator.ts";
 export class CreareUserCase {
   private userRepository: IUserrepository;
   constructor(userRepository: IUserrepository) {

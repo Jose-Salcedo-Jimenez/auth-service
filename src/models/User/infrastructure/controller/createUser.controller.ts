@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { UserRepsoitory } from "../../repositories/UserRepository.ts";
-import { CreareUserCase } from "../../../application/useCases/user/CreateUserUseCase.ts";
-import { sendEmail } from "../../api/sendEmail.ts";
+import { UserRepsoitory } from "../repository/UserRepository.ts";
+import { CreareUserCase } from "../../application/useCase/CreateUserUseCase.ts";
+import { sendEmail } from "../../../../infrastructure/api/sendEmail.ts";
 export class UserController {
   private createUserCase: CreareUserCase;
   constructor() {
@@ -13,7 +13,7 @@ export class UserController {
     const userData = req.body;
     try {
       const newUser = await this.createUserCase.execute(userData);
-      await sendEmail(userData.email);
+//      await sendEmail(userData.email);
 
       delete newUser.password
       return res

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { UserRepsoitory } from "../../repositories/UserRepository.ts";
-import { findByID } from "../../../application/useCases/user/UseCaseFindById.ts";
+import { UserRepsoitory } from "../repository/UserRepository.ts";
+import { findByID } from "../../application/useCase/UseCaseFindById.ts";
 export class findByIdController {
   private findUser: findByID;
   constructor() {

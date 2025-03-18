@@ -1,5 +1,5 @@
-import { updateUser as UseCaseUpdateUser } from "../../../application/useCases/user/UseCaseUpdateUser.ts"
-import { UserRepsoitory } from "../../repositories/UserRepository.ts";
+import { updateUser as UseCaseUpdateUser } from "../../application/useCase/UseCaseUpdateUser.ts"
+import { UserRepsoitory } from "../repository/UserRepository.ts";
 import { Request, Response } from "express";
 export class updateUser{
     private userRepository: UseCaseUpdateUser;

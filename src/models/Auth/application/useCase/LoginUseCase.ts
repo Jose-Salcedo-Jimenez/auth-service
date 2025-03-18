@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { IUserrepository } from "../../domain/repositories/IUserRepository.ts";
+import { IUserrepository } from "../../../User/domain/repository/IUserRepository.ts";
 import { AuthUseCase } from "./AuthUseCase.ts";
 
 export class LoginUseCase {

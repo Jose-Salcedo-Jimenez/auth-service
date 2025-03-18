@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import { User } from "../../domain/entities/user.ts";
-import { ITokenPayload } from "../../domain/repositories/ITokenPayload.ts";
+import { User } from "../../../User/domain/entities/user.ts";
+import { ITokenPayload } from "../../domain/repository/ITokenPayload.ts";
 export class AuthUseCase {
   private jwtSecret: string;
 

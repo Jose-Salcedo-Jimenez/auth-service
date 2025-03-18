@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { UserRepsoitory } from "../../repositories/UserRepository.ts";
-import { useCaseFindByEmail } from "../../../application/useCases/user/UseCaseFindByEmail.ts";
+import { UserRepsoitory } from "../repository/UserRepository.ts";
+import { useCaseFindByEmail } from "../../application/useCase/UseCaseFindByEmail.ts";
 export class findByEmailController {
   private findUser: useCaseFindByEmail;
   constructor() {
